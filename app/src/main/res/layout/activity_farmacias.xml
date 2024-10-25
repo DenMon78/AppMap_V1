@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FARMACIAS"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/et_search_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Busca una farmacia"
+        android:layout_below="@id/tv_title"
+        android:textColor="#090909"
+        android:layout_margin="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:padding="10dp"
+        android:drawableStart="@android:drawable/ic_menu_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_farmacias"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/et_search_service"
+        android:layout_marginTop="8dp"
+        android:padding="8dp" />
+</RelativeLayout>

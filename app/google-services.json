@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "280479040814",
+    "project_id": "tezo-explorer-a0b85",
+    "storage_bucket": "tezo-explorer-a0b85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280479040814:android:22d821994b3d7e539866bf",
+        "android_client_info": {
+          "package_name": "com.usiel.tezoexplorer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7IQoqFeT5dE5-DeSvWPqNPit-dCb3NVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

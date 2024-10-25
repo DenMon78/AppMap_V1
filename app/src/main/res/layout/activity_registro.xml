@@ -1,0 +1,94 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#EBEBEC"
+    android:gravity="center_horizontal">
+
+    <!-- Título de la pantalla -->
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regístrate"
+        android:textColor="#070707"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="24dp"/>
+
+    <!-- Campo Correo Electrónico -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo electrónico"
+        android:textColor="@color/black"
+        android:textColorHint="#605F5F"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:background="@drawable/rounded_edit_text"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"/>
+
+    <!-- Campo Contraseña -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:textColor="@color/black"
+        android:textColorHint="#605F5F"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:background="@drawable/rounded_edit_text"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"/>
+
+    <!-- Campo Confirmar Contraseña -->
+    <EditText
+        android:id="@+id/etConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirmar contraseña"
+        android:textColor="@color/black"
+        android:textColorHint="#605F5F"
+        android:inputType="textPassword"
+        android:padding="16dp"
+        android:background="@drawable/rounded_edit_text"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"/>
+
+    <!-- Botón de Registro -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registrar"
+        android:backgroundTint="@color/purple_700"
+        android:textColor="@android:color/white"
+        android:padding="16dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="6dp"
+        android:background="@drawable/rounded_button"/>
+
+    <!-- Botón para Volver a Iniciar Sesión -->
+    <Button
+        android:id="@+id/btnBackToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver a Iniciar Sesión"
+        android:backgroundTint="@color/blue_700"
+        android:textColor="@android:color/white"
+        android:padding="16dp"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="6dp"
+        android:background="@drawable/rounded_button"/>
+</LinearLayout>

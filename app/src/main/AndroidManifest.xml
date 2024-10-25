@@ -1,0 +1,53 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TezoExplorer"
+        tools:targetApi="31">
+
+        <!-- Activity Splash (Pantalla inicial, si así lo quieres) -->
+        <activity
+            android:name=".ActivitySplash"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainActivity (Inicio de sesión, probablemente) -->
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- Nueva RegisterActivity -->
+        <activity
+            android:name=".RegisterActivity" />
+
+        <!-- Activity Principal (Pantalla principal de la aplicación) -->
+        <activity
+            android:name=".Principal" />
+
+        <!-- Detalle de un ítem o negocio específico -->
+        <activity
+            android:name=".DetailActivity" />
+
+        <!-- Activity que muestra la lista de farmacias -->
+        <activity
+            android:name=".FarmaciasActivity"
+            android:label="Lista de Farmacias"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+    </application>
+
+    <!-- Permiso de Internet necesario para la conexión a Firebase -->
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
