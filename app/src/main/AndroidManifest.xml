@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Configuración general de la aplicación -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,7 +13,7 @@
         android:theme="@style/Theme.TezoExplorer"
         tools:targetApi="31">
 
-        <!-- Activity Splash (Pantalla inicial, si así lo quieres) -->
+        <!-- Pantalla de bienvenida (splash screen) que se muestra al iniciar la aplicación -->
         <activity
             android:name=".ActivitySplash"
             android:exported="true"
@@ -23,31 +24,54 @@
             </intent-filter>
         </activity>
 
-        <!-- MainActivity (Inicio de sesión, probablemente) -->
+        <!-- Pantalla principal de la app (MainActivity), probablemente utilizada para el inicio de sesión -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
-        <!-- Nueva RegisterActivity -->
-        <activity
-            android:name=".RegisterActivity" />
+        <!-- Pantalla de registro de nuevos usuarios -->
+        <activity android:name=".RegisterActivity" />
 
-        <!-- Activity Principal (Pantalla principal de la aplicación) -->
-        <activity
-            android:name=".Principal" />
+        <!-- Pantalla de navegación principal con acceso a diferentes servicios -->
+        <activity android:name=".Principal" />
 
-        <!-- Detalle de un ítem o negocio específico -->
-        <activity
-            android:name=".DetailActivity" />
+        <!-- Actividad para mostrar los detalles de un ítem o negocio específico -->
+        <activity android:name=".DetailActivity" />
 
-        <!-- Activity que muestra la lista de farmacias -->
+        <!-- Actividades para mostrar listas de servicios específicos como farmacias, bancos, hoteles, mecánicos, restaurantes y tiendas -->
         <activity
             android:name=".FarmaciasActivity"
             android:label="Lista de Farmacias"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".BancosActivity"
+            android:label="Lista de Bancos"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".HotelesActivity"
+            android:label="Lista de Hoteles"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".MecanicosActivity"
+            android:label="Lista de Mecánicos"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".RestaurantesActivity"
+            android:label="Lista de Restaurantes"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".TiendasActivity"
+            android:label="Lista de Tiendas"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
     </application>
 
-    <!-- Permiso de Internet necesario para la conexión a Firebase -->
+    <!-- Permiso para acceder a Internet, necesario para Firebase o solicitudes de red -->
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

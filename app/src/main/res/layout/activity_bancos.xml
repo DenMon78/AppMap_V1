@@ -3,31 +3,34 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+    <!-- Título de BANCOS -->
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/banco_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FARMACIAS"
+        android:text="BANCOS"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
 
+    <!-- Campo de búsqueda -->
     <EditText
         android:id="@+id/et_search_service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Busca una farmacia"
-        android:layout_below="@id/tv_title"
+        android:hint="Busca un banco"
+        android:layout_below="@id/banco_title"
         android:textColor="#090909"
         android:layout_margin="16dp"
         android:background="@android:drawable/editbox_background"
         android:padding="10dp"
         android:drawableStart="@android:drawable/ic_menu_search" />
 
+    <!-- RecyclerView para la lista de bancos -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_farmacias"
+        android:id="@+id/banco_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/et_search_service"

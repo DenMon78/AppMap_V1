@@ -1,6 +1,5 @@
 package com.usiel.tezoexplorer
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
@@ -12,16 +11,16 @@ class Principal : AppCompatActivity() {
 
     private lateinit var greetingTextView: TextView
     private lateinit var searchEditText: EditText
-    private lateinit var servicesGrid: GridLayout // Declaración de servicesGrid
+    private lateinit var servicesGrid: GridLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_principal) // Asegúrate de que el nombre del layout sea correcto
+        setContentView(R.layout.activity_principal)
 
         // Inicializar las vistas
         greetingTextView = findViewById(R.id.text_greeting)
         searchEditText = findViewById(R.id.search_service)
-        servicesGrid = findViewById(R.id.services_grid) // Inicializa el GridLayout
+        servicesGrid = findViewById(R.id.services_grid)
 
         // Configuración de los clics en los ítems del GridLayout
         setupServicesGrid()
@@ -29,40 +28,39 @@ class Principal : AppCompatActivity() {
 
     private fun setupServicesGrid() {
         // Configurar los clics en cada ítem del GridLayout según su posición
-        val pharmacyItem = servicesGrid.getChildAt(0) // Ítem de Farmacias
+        val pharmacyItem = servicesGrid.getChildAt(0)
         pharmacyItem.setOnClickListener {
-            openDetailActivity("Farmacias") // Abre una nueva actividad para Farmacias
+            openSpecificActivity(FarmaciasActivity::class.java)
         }
 
-        val restaurantItem = servicesGrid.getChildAt(1) // Ítem de Restaurantes
+        val restaurantItem = servicesGrid.getChildAt(1)
         restaurantItem.setOnClickListener {
-            openDetailActivity("Restaurantes") // Abre una nueva actividad para Restaurantes
+            openSpecificActivity(RestaurantesActivity::class.java)
         }
 
-        val bankItem = servicesGrid.getChildAt(2) // Ítem de Bancos
+        val bankItem = servicesGrid.getChildAt(2)
         bankItem.setOnClickListener {
-            openDetailActivity("Bancos") // Abre una nueva actividad para Bancos
+            openSpecificActivity(BancosActivity::class.java)
         }
 
-        val mechanicItem = servicesGrid.getChildAt(3) // Ítem de Mecánicos
+        val mechanicItem = servicesGrid.getChildAt(3)
         mechanicItem.setOnClickListener {
-            openDetailActivity("Mecánicos") // Abre una nueva actividad para Mecánicos
+            openSpecificActivity(MecanicosActivity::class.java)
         }
 
-        val hotelItem = servicesGrid.getChildAt(4) // Ítem de Hoteles
+        val hotelItem = servicesGrid.getChildAt(4)
         hotelItem.setOnClickListener {
-            openDetailActivity("Hoteles") // Abre una nueva actividad para Hoteles
+            openSpecificActivity(HotelesActivity::class.java)
         }
 
-        val shopItem = servicesGrid.getChildAt(5) // Ítem de Tiendas
+        val shopItem = servicesGrid.getChildAt(5)
         shopItem.setOnClickListener {
-            openDetailActivity("Tiendas") // Abre una nueva actividad para Tiendas
+            openSpecificActivity(TiendasActivity::class.java)
         }
     }
 
-    private fun openDetailActivity(serviceName: String) {
-        val intent = Intent(this, DetailActivity::class.java)
-        intent.putExtra("SERVICE_NAME", serviceName) // Envía el nombre del servicio
+    private fun openSpecificActivity(activityClass: Class<*>) {
+        val intent = Intent(this, activityClass)
         startActivity(intent)
     }
 }
