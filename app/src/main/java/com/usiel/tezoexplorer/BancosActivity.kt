@@ -13,16 +13,31 @@ class BancosActivity : AppCompatActivity() {
 
         val listaDeBancos = obtenerListaDeBancos()
 
-        // Cambié el ID de rv_banco a banco_recycler para coincidir con el XML actualizado
         val recyclerView = findViewById<RecyclerView>(R.id.banco_recycler)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = ServicioAdapter(listaDeBancos)
+        recyclerView.adapter = ServicioAdapter(listaDeBancos, this) // Pasamos el contexto como segundo parámetro
     }
 
     private fun obtenerListaDeBancos(): List<Servicio> {
         return listOf(
-            Servicio("Banco 1", "Dirección del Banco 1", R.drawable.bancos),
-            Servicio("Banco 2", "Dirección del Banco 2", R.drawable.farmacia),
+            Servicio(
+                nombre = "Banco 1",
+                descripcion = "",
+                horario = "9:00 - 16:00",
+                telefono = "123-456-7890",
+                latitud = 20.1930883,
+                longitud = -99.2719234,
+                iconoResId = R.drawable.bancos
+            ),
+            Servicio(
+                nombre = "Banco 2",
+                descripcion = "",
+                horario = "9:00 - 16:00",
+                telefono = "987-654-3210",
+                latitud =  20.1925483,
+                longitud = -99.2716331,
+                iconoResId = R.drawable.farmacia
+            )
             // Agrega más bancos si es necesario
         )
     }

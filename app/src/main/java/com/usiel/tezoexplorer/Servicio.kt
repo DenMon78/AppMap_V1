@@ -1,8 +1,11 @@
 package com.usiel.tezoexplorer
 
-// Servicio.kt
 data class Servicio(
     val nombre: String,
     val descripcion: String,
+    val horario: String,
+    val telefono: String,
+    val latitud: Double,
+    val longitud: Double,
     val iconoResId: Int
 )

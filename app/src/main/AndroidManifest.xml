@@ -1,7 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Permiso para acceder a Internet, necesario para Firebase o solicitudes de red -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <!-- Configuración general de la aplicación -->
+
+    <!-- Permisos de ubicación para acceder a la ubicación precisa y aproximada del dispositivo -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +20,35 @@
         android:theme="@style/Theme.TezoExplorer"
         tools:targetApi="31">
 
+
+        <!-- API Key para Google Maps principal (Maps SDK for Android
+        Para mostrar los mapas y ubicaciones de los servicios.)-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD0W6Uu2cW-E8BA4CI6967scClUtDlRBvE" />
+
+        <!-- API Key de Distance Matrix API
+         para calcular la distancia y el tiempo de viaje entre el usuario y los servicios -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY_MATRIX"
+            android:value="AIzaSyAPElcikb4saUkGnbGtt57B-l47mPYO_eA" />
+
+        <!-- API Key de PLACES API
+         para permitir a los usuarios buscar servicios y puntos de interés cercanos.-->
+        <meta-data
+            android:name="com.google.android.places.API_KEY_PLACES"
+            android:value="AIzaSyDdatn9CksYiV-JHVyREOWkmr1tMg03auQ" />
+
+
+        <!-- API Key de Geocoding
+         para convertir direcciones en coordenadas y viceversa-->
+        <meta-data
+            android:name="com.google.android.places.API_KEY_GEOCODING"
+            android:value="AIzaSyB6SRDanK_ZwAhfinWz9avpVptuIbv8K04" />
+
+
+
+
         <!-- Pantalla de bienvenida (splash screen) que se muestra al iniciar la aplicación -->
         <activity
             android:name=".ActivitySplash"
@@ -20,58 +56,47 @@
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Pantalla principal de la app (MainActivity), probablemente utilizada para el inicio de sesión -->
+        </activity> <!-- Pantalla principal de la app (MainActivity), probablemente utilizada para el inicio de sesión -->
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- Pantalla de registro de nuevos usuarios -->
+        <activity android:name=".RegisterActivity" /> <!-- Pantalla de navegación principal con acceso a diferentes servicios -->
+        <activity android:name=".Principal" /> <!-- Actividad para mostrar los detalles de un ítem o negocio específico -->
+        <activity android:name=".DetailActivity" /> <!-- Actividades para mostrar listas de servicios específicos como farmacias, bancos, hoteles, mecánicos, restaurantes y tiendas -->
 
-        <!-- Pantalla de registro de nuevos usuarios -->
-        <activity android:name=".RegisterActivity" />
 
-        <!-- Pantalla de navegación principal con acceso a diferentes servicios -->
-        <activity android:name=".Principal" />
+        <!--Actividad para el mapa-->
+        <activity android:name=".MapaActivity"/>
 
-        <!-- Actividad para mostrar los detalles de un ítem o negocio específico -->
-        <activity android:name=".DetailActivity" />
 
-        <!-- Actividades para mostrar listas de servicios específicos como farmacias, bancos, hoteles, mecánicos, restaurantes y tiendas -->
         <activity
             android:name=".FarmaciasActivity"
             android:label="Lista de Farmacias"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".BancosActivity"
             android:label="Lista de Bancos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".HotelesActivity"
             android:label="Lista de Hoteles"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".MecanicosActivity"
             android:label="Lista de Mecánicos"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".RestaurantesActivity"
             android:label="Lista de Restaurantes"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".TiendasActivity"
             android:label="Lista de Tiendas"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
     </application>
 
-    <!-- Permiso para acceder a Internet, necesario para Firebase o solicitudes de red -->
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

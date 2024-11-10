@@ -2,6 +2,7 @@ package com.usiel.tezoexplorer
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.GridLayout
 import android.widget.TextView
@@ -12,6 +13,7 @@ class Principal : AppCompatActivity() {
     private lateinit var greetingTextView: TextView
     private lateinit var searchEditText: EditText
     private lateinit var servicesGrid: GridLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
